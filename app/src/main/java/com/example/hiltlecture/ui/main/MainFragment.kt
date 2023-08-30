@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.hiltlecture.R
 import com.example.hiltlecture.databinding.FragmentMainBinding
@@ -19,6 +21,9 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class MainFragment : Fragment() {
     private lateinit var binding: FragmentMainBinding
+
+    private val activityViewModel by activityViewModels<MainViewModel>()
+    private val viewModel by viewModels<MainViewModel>()
 
     @Inject
     lateinit var repository: MyRepository
